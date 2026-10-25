@@ -1,209 +1,172 @@
 
-@'
-# Assignment 12: React UI Component Library
+# Karanveer Singh - UI Component Library
 
-**Student Name:** Karanveer Singh  
-**GitHub Repository:** https://github.com/karanveersingh10/singh_karanveer_ui_garden
+## Project Overview
 
-## 1. Project Overview
+This project is a reusable UI Component Library created using React, TypeScript, Styled Components, and Storybook for Assignment 12: Web Component Library.
 
-This project is a reusable UI Component Library built using React,
-TypeScript, Styled Components, and Storybook.
+The purpose of this project is to create reusable components, document their usage in Storybook, test their functionality, and build a production-ready web application using Docker.
 
-The library contains reusable components with default and disabled
-states where applicable.
+## Technologies Used
 
-## 2. Components
-
-- Button
-- Label
-- Text
-- Dropdown
-- RadioButton
-- Img
-- HeroImage
-- Card
-- Table
-- TableHeader
-- TableRow
-- TableCell
-- TableFooter
-
-## 3. Technologies
-
-- React and TypeScript
+- React
+- TypeScript
 - Styled Components
 - Storybook
 - Jest and React Testing Library
-- Docker and Nginx
+- Docker
+- NGINX
 - Git and GitHub
 
-## 4. Install Dependencies
+## Components
 
-Run from the project folder.
+The component library includes:
+
+1. Button
+2. Label
+3. Text
+4. Dropdown
+5. RadioButton
+6. Img
+7. HeroImage
+8. Card
+9. Table
+10. TableHeader
+11. TableRow
+12. TableCell
+13. TableFooter
+
+## Installation
+
+Clone the repository:
 
 ```powershell
-# Install the packages required by the project.
+git clone https://github.com/karanveersingh10/singh_karanveer_ui_garden.git
+```
+
+Navigate to the project folder:
+
+```powershell
+cd singh_karanveer_ui_garden
+```
+
+Install the dependencies:
+
+```powershell
 npm.cmd install
 ```
 
-## 5. Run the React Application
+## Run the React Application
 
 ```powershell
-# Start the React development server.
 npm.cmd start
 ```
 
-Open http://localhost:3000.
+The application will normally be available at:
 
-## 6. Run Storybook
+http://localhost:3000
 
-Open another terminal in the project folder.
+## Run Storybook
+
+Start Storybook:
 
 ```powershell
-# Start Storybook to demonstrate the components.
 npm.cmd run storybook
 ```
 
-Open http://localhost:6006.
+Open Storybook in your browser:
 
-Show the Default and Disabled stories for the components.
+http://localhost:6006
 
-## 7. Run Automated Tests
+Storybook documents the reusable components and allows their different states and properties to be explored.
+
+## Run Tests
+
+Run all tests:
 
 ```powershell
-# Run all tests once without watch mode.
 npm.cmd test -- --watchAll=false
 ```
 
-The last reported successful run passed 26 tests across 13 test suites.
-Run the command again before submission to confirm the results.
-
-## 8. Production Build
+## Create a Production Build
 
 ```powershell
-# Build the React application for production.
 npm.cmd run build
 ```
 
-## 9. Docker Demonstration
+This command creates an optimized production build in the `build` directory.
 
-Make sure Docker Desktop is running.
+## Docker Deployment
+
+The application is packaged into a Docker image and served through NGINX.
+
+### Build the Docker Image
 
 ```powershell
-# Build the Docker image from the Dockerfile in this folder.
 docker build -t singh_karanveer_ui_garden .
 ```
 
+### Run the Docker Container
+
 ```powershell
-# Start the container and map computer port 8083 to container port 80.
 docker run --name singh_karanveer_coding_assignment12 -p 8083:80 -d singh_karanveer_ui_garden
 ```
 
+### Verify the Running Container
+
 ```powershell
-# Check that the container is running.
 docker ps
 ```
 
+### Open the Dockerized Application
+
+http://localhost:8083
+
+The application was opened successfully in the browser, displaying:
+
+- My UI Component Library
+- Assignment 12: React and Storybook
+
+### Stop the Container
+
 ```powershell
-# View the container logs if you need to troubleshoot.
-docker logs singh_karanveer_coding_assignment12
+docker stop singh_karanveer_coding_assignment12
 ```
 
-Open http://localhost:8083 to view the production application.
-
-To stop and remove the container after the demonstration:
+### Start the Container Again
 
 ```powershell
-# Stop the container.
-docker stop singh_karanveer_coding_assignment12
+docker start singh_karanveer_coding_assignment12
+```
 
-# Remove the stopped container.
+### Remove the Container
+
+Stop and remove the container when it is no longer needed:
+
+```powershell
+docker stop singh_karanveer_coding_assignment12
 docker rm singh_karanveer_coding_assignment12
 ```
 
-## 10. Git and GitHub
+## Docker Configuration
+
+The Dockerfile uses a multi-stage build:
+
+1. Uses Node.js to install dependencies and build the React application.
+2. Uses NGINX to serve the optimized production files.
+3. Exposes port 80 inside the container.
+4. Maps port 8083 on the local computer to port 80 inside the container.
+
+The `.dockerignore` file excludes unnecessary files such as `node_modules`, `build`, and `.git` from the Docker build context.
+
+## GitHub Repository
 
 Repository:
+
 https://github.com/karanveersingh10/singh_karanveer_ui_garden
-
-```powershell
-# Check the installed Git version.
-git --version
-
-# Check the current branch and working tree.
-git status
-
-# Show the configured GitHub remote.
-git remote -v
-
-# Show the current branch name.
-git branch --show-current
-
-# Show recent commits.
-git log -5 --oneline
-```
-
-### Upload Changes to GitHub
-
-Use these commands when you have new or modified files.
-
-```powershell
-# Stage the project changes.
-git add .
-
-# Review which files are staged.
-git status
-
-# Save the staged changes in a commit.
-git commit -m "Update Assignment 12 README and documentation"
-
-# Upload the current branch to its configured GitHub remote.
-git push
-```
-
-If Git reports "nothing to commit", there are no new changes to commit.
-
-If the GitHub remote is not configured, add it once:
-
-```powershell
-# Connect this local project to the GitHub repository.
-git remote add origin https://github.com/karanveersingh10/singh_karanveer_ui_garden.git
-```
-
-If your branch is named master but the assignment repository should use main:
-
-```powershell
-# Rename the current local branch to main.
-git branch -M main
-
-# Upload main and set its upstream tracking branch.
-git push -u origin main
-```
-
-Do not add origin again if it already exists. Never put your GitHub password or access token in this file.
-
-## 11. Instructor Demonstration Order
-
-1. Introduce the project and explain its purpose.
-2. Show the component folders and source files in VS Code.
-3. Start Storybook and demonstrate the components.
-4. Show the Default and Disabled stories.
-5. Run the automated tests and show the results.
-6. Show the Dockerfile and explain its build stages.
-7. Build and run the Docker container.
-8. Open http://localhost:8083.
-9. Show the GitHub repository and recent commits.
-
-## 12. Docker Configuration
-
-The Dockerfile uses a multi-stage build.
-
-The first stage builds the React application.
-The second stage uses Nginx to serve the production files.
-
-Container port 80 is mapped to port 8083 on the computer.
 
 ## Author
 
-Karanveer Singh
+**Karanveer Singh**
+
+Assignment 12: Web Component Library
