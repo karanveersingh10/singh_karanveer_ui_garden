@@ -10,11 +10,12 @@
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.19",
-    "web-vitals": "^5.1.0"
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.6.3",
     "@storybook/preset-create-react-app": "^10.6.3",
+    "@storybook/react": "^10.6.3",
     "@storybook/react-webpack5": "^10.6.3",
     "@types/jest": "^30.0.0",
     "@types/react": "^19.0.0",
@@ -28,5 +29,17 @@
     "test": "react-scripts test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

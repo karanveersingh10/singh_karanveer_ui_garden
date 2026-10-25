@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 import type { DropdownProps } from './Dropdown.types';
 
@@ -46,7 +47,9 @@ function Dropdown({
         value={value ?? ''}
         disabled={disabled}
         $disabled={disabled}
-        onChange={(event) => onChange?.(event.target.value)}
+        onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+          onChange?.(event.target.value)
+        }
       >
         <option value="">Select an option</option>
 
